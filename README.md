@@ -1,21 +1,33 @@
 # ember-cli-with-relative-path
 
-This README outlines the details of collaborating on this Ember addon.
+A helper for defining relative paths to routes. Usage:
+```hbs
+{{#link-to (with-relative-path 'child-route') ...}}
+```
 
-## Installation
+This will generate an absolute route path, prepending the current route path to the provided value.
 
-* `git clone <repository-url>` this repository
-* `cd ember-cli-with-relative-path`
+By default, the helper will replace a trailing `index` in the current route path with the provided value. If this behaviour is not desired, turn it off as such:
+```hbs
+{{#link-to (with-relative-path 'child-route' replaceIndex=false) ...}}
+```
+
+Installation
+------------------------------------------------------------------------------
+
+```
+ember install ember-cli-with-relative-path
+```
+
+## Development
+
+* `git clone https://github.com/tstormk/ember-cli-with-relative-path.git`
 * `npm install`
-
-## Running
-
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+* `ember server`
+* Visit the dummy app at http://localhost:4200.
 
 ## Running Tests
 
-* `npm test` (Runs `ember try:each` to test your addon against multiple Ember versions)
 * `ember test`
 * `ember test --server`
 
