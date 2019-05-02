@@ -1,5 +1,5 @@
 'use strict';
 
 module.exports = {
-  name: 'ember-cli-with-relative-path'
+  name: require('./package').name
 };
