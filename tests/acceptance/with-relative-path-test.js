@@ -1,24 +1,27 @@
-import { test } from 'qunit';
-import moduleForAcceptance from '../../tests/helpers/module-for-acceptance';
+import { module, test } from 'qunit';
+import { visit, click } from '@ember/test-helpers';
+import { setupApplicationTest } from 'ember-qunit';
 
-moduleForAcceptance('Acceptance | with relative path');
+module('Acceptance | with relative path', function(hooks) {
+  setupApplicationTest(hooks);
 
-test('it appends route paths correctly', async function(assert) {
-  await visit('/reasons');
+  test('it appends route paths correctly', async function(assert) {
+    await visit('/reasons');
 
-  // Test top-level routes
-  assert.dom('ul:nth-of-type(1) li:nth-of-type(1) a').hasAttribute(
-    'href',
-    '/reasons/good',
-    'it appends route paths for top-level routes correctly'
-  );
+    // Test top-level routes
+    assert.dom('ul:nth-of-type(1) li:nth-of-type(1) a').hasAttribute(
+      'href',
+      '/reasons/good',
+      'it appends route paths for top-level routes correctly'
+    );
 
-  await click('ul:nth-of-type(1) li:nth-of-type(1) a');
+    await click('ul:nth-of-type(1) li:nth-of-type(1) a');
 
-  // Test nested routes
-  assert.dom('ul:nth-of-type(2) li:nth-of-type(1) a').hasAttribute(
-    'href',
-    '/reasons/good/create',
-    'it appends route paths for nested routes correctly'
-  );
+    // Test nested routes
+    assert.dom('ul:nth-of-type(2) li:nth-of-type(1) a').hasAttribute(
+      'href',
+      '/reasons/good/create',
+      'it appends route paths for nested routes correctly'
+    );
+  });
 });
