@@ -36,12 +36,12 @@
     "ember-export-application-global": "^2.0.0",
     "ember-load-initializers": "^1.1.0",
     "ember-resolver": "^5.0.1",
-    "ember-source": "~3.5.0",
     "ember-try": "^1.1.0",
     "eslint-plugin-ember": "^5.2.0",
     "eslint-plugin-node": "^7.0.1",
     "loader.js": "^4.7.0",
-    "qunit-dom": "^0.8.5"
+    "qunit-dom": "^0.8.5",
+    "bower": "^1.8.2"
   },
   "engines": {
     "node": "6.* || 8.* || >= 10.*"
